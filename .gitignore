@@ -1,0 +1,31 @@
+# ── Environnement & secrets ───────────────────────────────────────────────────
+.env
+
+# ── Images uploadées (générées à l'exécution) ─────────────────────────────────
+assets/images/articles/
+
+# ── Système d'exploitation ────────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+._*
+
+# ── Éditeurs ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.kate-swp
+*~
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+error_log
+
+# ── PHP / Composer ────────────────────────────────────────────────────────────
+vendor/
+composer.lock
+
+# ── Données runtime (décommenter si vous ne voulez pas versionner les articles)
+# data/articles.json
