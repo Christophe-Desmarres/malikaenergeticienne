@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1780510651,
+        "titre": "Séance prix réduit",
+        "resume": "<p>Pour cette journée <strong>spéciale<\/strong>, je vous offre un tarif découverte.<\/p><ul><li>tarif 1<\/li><li>tarif 2<\/li><\/ul><p>Et c'est parti !<\/p>",
+        "date": "2026-06-03",
+        "image": "assets\/images\/articles\/1780515840_a37370a9.jpg",
+        "publie": false
+    },
+    {
+        "id": 1780511262,
+        "titre": "Test article 2",
+        "resume": "Hello, voici un article pour tester une deuxième fois.\r\nTopette",
+        "date": "2026-06-03",
+        "image": "assets\/images\/articles\/1780512391_9c9ae620.jpg",
+        "publie": false
+    },
+    {
+        "id": 1780511536,
+        "titre": "test article 3",
+        "resume": "ceci est pour le test3",
+        "date": "2026-06-03",
+        "image": "assets\/images\/articles\/1780511536_74761731.jpg",
+        "publie": false
+    },
+    {
+        "id": 1780512560,
+        "titre": "actualité 4",
+        "resume": "Hello info",
+        "date": "2026-06-03",
+        "image": "assets\/images\/articles\/1780512560_0410a1b2.jpg",
+        "publie": false
+    }
+]

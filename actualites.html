@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Actualités de Malika Énergéticienne — conseils, offres spéciales et nouvelles de votre praticienne en soins énergétiques LaHoChi et réflexologie Dien Chan à Trédion.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://malikaenergeticienne.fr/actualites.html">
+    <title>Actualités | Malika Énergéticienne — Trédion, Morbihan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8e7cc3;
+            --primary-light: rgba(142,124,195,.1);
+            --primary-dark: #7a6bc0;
+            --secondary: #f8f9fa;
+            --dark: #2c2c2c;
+            --light: #ffffff;
+            --gray: #e0e0e0;
+            --text-muted: #666;
+            --transition: all .3s ease;
+            --radius: 10px;
+            --shadow: 0 5px 15px rgba(0,0,0,.06);
+            --shadow-hover: 0 10px 25px rgba(0,0,0,.12);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: var(--dark); background: var(--secondary); }
+        a { text-decoration: none; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* ── Header ── */
+        header {
+            background: var(--light); box-shadow: 0 2px 10px rgba(0,0,0,.05);
+            position: fixed; width: 100%; z-index: 100; padding: 15px 0;
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .header-nav { display: flex; gap: 20px; align-items: center; }
+        .header-nav a { color: var(--text-muted); font-size: .9rem; transition: color .2s; }
+        .header-nav a:hover { color: var(--primary); }
+        .header-nav .btn-contact {
+            background: var(--primary); color: #fff;
+            padding: 9px 20px; border-radius: 20px; font-weight: 600; font-size: .875rem;
+        }
+        .header-nav .btn-contact:hover { background: var(--primary-dark); color: #fff; }
+
+        /* ── Page hero ── */
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+                        url('assets/images/nuages_cosmiques.jpg') center/cover no-repeat;
+            color: #fff; text-align: center;
+            padding: 160px 20px 80px;
+            position: relative;
+        }
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem; margin-bottom: 14px; line-height: 1.2;
+        }
+        .page-hero p { font-size: 1.1rem; opacity: .9; max-width: 600px; margin: 0 auto; }
+
+        /* ── Grille articles ── */
+        main { padding: 60px 0 80px; }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .news-card {
+            background: var(--light); border-radius: var(--radius);
+            box-shadow: var(--shadow); overflow: hidden;
+            display: flex; flex-direction: column;
+            transition: var(--transition);
+        }
+        .news-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+
+        .news-card-img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .news-card-placeholder {
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+        }
+
+        .news-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+
+        .news-date {
+            font-size: .78rem; font-weight: 600; color: var(--primary);
+            text-transform: uppercase; letter-spacing: .06em; margin-bottom: 10px;
+        }
+        .news-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem; color: var(--dark);
+            margin-bottom: 10px; line-height: 1.4; flex: 1;
+        }
+        .news-excerpt {
+            color: var(--text-muted); font-size: .9rem; line-height: 1.65;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .news-read-more {
+            display: inline-block; margin-top: 14px;
+            color: var(--primary); font-weight: 600; font-size: .875rem;
+            transition: color .2s;
+        }
+        .news-read-more:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        /* ── États vide / chargement ── */
+        .state-msg {
+            grid-column: 1 / -1; text-align: center;
+            padding: 60px 20px; color: var(--text-muted);
+        }
+        .state-msg i { font-size: 3rem; color: var(--gray); margin-bottom: 16px; display: block; }
+        .state-msg p { font-size: 1.1rem; margin-bottom: 20px; }
+        .state-msg a {
+            display: inline-block; background: var(--primary); color: #fff;
+            padding: 11px 28px; border-radius: 30px; font-weight: 600;
+        }
+        .state-msg a:hover { background: var(--primary-dark); }
+
+        /* ── Pagination info ── */
+        .articles-count {
+            text-align: right; color: var(--text-muted);
+            font-size: .85rem; margin-bottom: 20px;
+        }
+
+        /* ── Footer ── */
+        footer { background: var(--dark); color: rgba(255,255,255,.65); padding: 30px 0; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .footer-logo { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.3rem; }
+        .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .footer-links a { color: rgba(255,255,255,.5); transition: color .2s; font-size: .875rem; }
+        .footer-links a:hover { color: var(--primary); }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .news-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .page-hero { padding: 130px 20px 60px; }
+            .page-hero h1 { font-size: 2rem; }
+            .header-nav a:not(.btn-contact) { display: none; }
+            .news-grid { grid-template-columns: 1fr; }
+            main { padding: 40px 0 60px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="container header-inner">
+        <a href="index.html" class="logo">Malika Énergéticienne</a>
+        <div class="header-nav">
+            <a href="index.html">Accueil</a>
+            <a href="lahochi.html">LaHoChi</a>
+            <a href="reflexologie-dien-chan.html">Réflexologie</a>
+            <a href="index.html#contact" class="btn-contact">Prendre rendez-vous</a>
+        </div>
+    </nav>
+</header>
+
+<div class="page-hero">
+    <h1>Actualités</h1>
+    <p>Conseils, offres spéciales et nouvelles de votre praticienne énergéticienne à Trédion.</p>
+</div>
+
+<main>
+    <div class="container">
+        <p class="articles-count" id="articles-count"></p>
+        <div class="news-grid" id="news-grid">
+            <div class="state-msg">
+                <i class="fas fa-circle-notch fa-spin"></i>
+                <p>Chargement des actualités…</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-logo">Malika Énergéticienne</div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="lahochi.html">LaHoChi 13ème Octave</a>
+                <a href="reflexologie-dien-chan.html">Réflexologie Dien Chan</a>
+                <a href="mentions-legales.html">Mentions Légales</a>
+                <a href="politique-confidentialite.html">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function () {
+    var grid  = document.getElementById('news-grid');
+    var count = document.getElementById('articles-count');
+
+    fetch('api/articles.php?all=1')
+        .then(function(r) { return r.ok ? r.json() : []; })
+        .then(function(articles) {
+            if (!articles || !articles.length) {
+                grid.innerHTML = '<div class="state-msg">'
+                    + '<i class="fas fa-newspaper"></i>'
+                    + '<p>Aucune actualité pour le moment.</p>'
+                    + '<a href="index.html">← Retour à l\'accueil</a>'
+                    + '</div>';
+                return;
+            }
+
+            count.textContent = articles.length + ' article' + (articles.length > 1 ? 's' : '');
+
+            grid.innerHTML = articles.map(function(a) {
+                var imgHtml = a.image
+                    ? '<img src="' + esc(a.image) + '" alt="' + esc(a.titre) + '" class="news-card-img" loading="lazy">'
+                    : '<div class="news-card-placeholder"></div>';
+                return '<article class="news-card">'
+                    + imgHtml
+                    + '<div class="news-card-body">'
+                    + '<div class="news-date">' + dateFr(a.date) + '</div>'
+                    + '<h2 class="news-title">' + esc(a.titre) + '</h2>'
+                    + '<div class="news-excerpt ql-content">' + safeHtml(a.resume) + '</div>'
+                    + '<a href="article.html?id=' + a.id + '" class="news-read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>'
+                    + '</div></article>';
+            }).join('');
+        })
+        .catch(function() {
+            grid.innerHTML = '<div class="state-msg">'
+                + '<i class="fas fa-exclamation-triangle"></i>'
+                + '<p>Impossible de charger les actualités.</p>'
+                + '<a href="index.html">← Retour à l\'accueil</a>'
+                + '</div>';
+        });
+
+    function esc(s) {
+        var d = document.createElement('div');
+        d.appendChild(document.createTextNode(String(s || '')));
+        return d.innerHTML;
+    }
+
+    function safeHtml(html) {
+        if (!html) return '';
+        var d = document.createElement('div');
+        d.innerHTML = html;
+        d.querySelectorAll('script,iframe,object,embed,form').forEach(function(el) { el.remove(); });
+        d.querySelectorAll('[onclick],[onerror],[onload]').forEach(function(el) {
+            ['onclick','onerror','onload'].forEach(function(a) { el.removeAttribute(a); });
+        });
+        return d.innerHTML;
+    }
+
+    function dateFr(str) {
+        var m = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+        var p = str.split('-');
+        return p.length === 3 ? parseInt(p[2], 10) + ' ' + m[parseInt(p[1], 10) - 1] + ' ' + p[0] : str;
+    }
+})();
+</script>
+
+</body>
+</html>

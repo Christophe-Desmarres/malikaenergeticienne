@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Politique de confidentialité de Malika Energéticienne">
+    <title>Politique de Confidentialité | Malika Energéticienne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8e7cc3;
+            --primary-dark: #7a6bc0;
+            --dark: #2c2c2c;
+            --gray: #e0e0e0;
+            --text-muted: #666;
+            --secondary: #f8f9fa;
+            --light: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--secondary);
+            padding-top: 70px;
+        }
+
+        /* ── HEADER ── */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .header-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover { color: var(--primary); text-decoration: none; }
+
+        /* ── CONTENU ── */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px 80px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .page-divider {
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 3px;
+            margin: 0 auto 50px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        p, ul, ol {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .logo { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">Malika Énergéticienne</a>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour à l'accueil
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Politique de Confidentialité</h1>
+        <div class="page-divider"></div>
+
+        <p>Malika Desmarres attache une grande importance à la protection de vos données personnelles. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.</p>
+
+        <h2>1. Données collectées</h2>
+        <p>Nous collectons les données suivantes :</p>
+        <ul>
+            <li>Nom</li>
+            <li>Adresse email</li>
+            <li>Numéro de téléphone</li>
+        </ul>
+
+        <h2>2. Finalité des données</h2>
+        <p>Les données sont utilisées pour :</p>
+        <ul>
+            <li>Gérer les réservations et les devis.</li>
+            <li>Vous contacter pour des informations liées à votre réservation.</li>
+        </ul>
+
+        <h2>3. Durée de conservation</h2>
+        <p>Vos données sont conservées pour les durées suivantes :</p>
+        <ul>
+            <li>Emails et coordonnées : 2 ans à partir de votre dernière interaction avec nous.</li>
+        </ul>
+
+        <h2>4. Partage des données</h2>
+        <p>Vos données ne sont partagées qu’avec :</p>
+        <ul>
+            <li>Notre hébergeur (OVH) pour le stockage sécurisé des photos.</li>
+        </ul>
+        <p>Nous ne vendons ni ne louons vos données à des tiers.</p>
+
+        <h2>5. Vos droits</h2>
+        <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+        <ul>
+            <li>Droit d’accès à vos données.</li>
+            <li>Droit de rectification.</li>
+            <li>Droit à l’effacement (sous réserve des obligations légales).</li>
+            <li>Droit à la portabilité.</li>
+            <li>Droit d’opposition au traitement.</li>
+        </ul>
+        <p>Pour exercer ces droits, contactez-nous à : <a href="mailto:malikaenergeticienne@hotmail.com">malikaenergeticienne@hotmail.com</a>.</p>
+
+        <h2>6. Sécurité des données</h2>
+        <p>Nous mettons en place les mesures suivantes pour protéger vos données :</p>
+        <ul>
+            <li>Hébergement sécurisé chez OVH.</li>
+            <li>Accès restreint aux données.</li>
+        </ul>
+
+        <h2>7. Modifications de la politique</h2>
+        <p>Cette politique peut être mise à jour. Nous vous informerons de tout changement significatif par email ou via une notification sur notre site.</p>
+
+        <h2>8. Contact</h2>
+        <p>Pour toute question, contactez-nous :</p>
+        <p><strong>Email</strong> : <a href="mailto:malikaenergeticienne@hotmail.com">malikaenergeticienne@hotmail.com</a></p>
+        <p><strong>Téléphone</strong> : <a href="tel:0683871846">06 83 87 18 46</a></p>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Retour à l’accueil
+            </a>
+        </div>
+    </div>
+</body>
+</html>

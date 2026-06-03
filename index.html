@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Malika, énergéticienne certifiée à Trédion (Morbihan 56). Soins LaHoChi 13ème Octave et réflexologie Dien Chan pour retrouver équilibre et bien-être. Séances en cabinet ou à distance.">
+    <meta name="keywords" content="énergéticienne Trédion, LaHoChi 13ème Octave, réflexologie Dien Chan, soin énergétique Morbihan, bien-être Vannes, réflexologie faciale Elven, Dien Chan 56, soin énergétique distance">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://malikaenergeticienne.fr/">
+    <link rel="preload" as="image" href="assets/images/nuages_cosmiques.jpg">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Malika Énergéticienne à Trédion | LaHoChi 13ème Octave & Réflexologie Dien Chan">
+    <meta property="og:description" content="Malika, énergéticienne certifiée à Trédion (Morbihan). Soins LaHoChi 13ème Octave et réflexologie Dien Chan. Séances en cabinet ou à distance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://malikaenergeticienne.fr/">
+    <meta property="og:image" content="https://malikaenergeticienne.fr/assets/images/nuages_cosmiques.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Malika Énergéticienne">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Malika Énergéticienne à Trédion | LaHoChi & Réflexologie Dien Chan">
+    <meta name="twitter:description" content="Soins LaHoChi 13ème Octave et réflexologie Dien Chan à Trédion (Morbihan). Séances en cabinet ou à distance.">
+    <meta name="twitter:image" content="https://malikaenergeticienne.fr/assets/images/nuages_cosmiques.jpg">
+    <title>Malika Énergéticienne à Trédion | LaHoChi 13ème Octave & Réflexologie Dien Chan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8e7cc3;
+            --primary-light: rgba(142, 124, 195, 0.1);
+            --primary-dark: #7a6bc0;
+            --secondary: #f8f9fa;
+            --dark: #2c2c2c;
+            --light: #ffffff;
+            --gray: #e0e0e0;
+            --text-muted: #666;
+            --transition: all 0.3s ease;
+            --radius: 10px;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--secondary);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ── HEADER ── */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--dark);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/images/nuages_cosmiques.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light);
+            text-align: center;
+            padding: 200px 0 100px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* ── SECTIONS ── */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-alt {
+            background-color: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* ── SERVICES ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            padding: 35px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-icon i {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            color: var(--dark);
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .service-card > p {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .service-card ul {
+            text-align: left;
+            margin: 15px 0 25px;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .service-card ul li {
+            margin-bottom: 6px;
+        }
+
+        /* ── BTN ── */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            color: var(--light);
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ── ABOUT ── */
+        .about-content {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .about-content h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        .about-content strong {
+            color: var(--dark);
+        }
+
+        .about-content ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        .about-content ul li {
+            margin-bottom: 6px;
+        }
+
+        /* ── TÉMOIGNAGES ── */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card > p {
+            color: var(--text-muted);
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 15px;
+        }
+
+        /* ── FAQ ── */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--gray);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+            background-color: var(--light);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 25px;
+            background-color: var(--secondary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-question {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 25px;
+            background-color: var(--light);
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 400px;
+            padding: 20px 25px;
+        }
+
+        .faq-answer p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ── CONTACT ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info h3,
+        .form-section h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            color: var(--text-muted);
+        }
+
+        .contact-info p i {
+            color: var(--primary);
+            width: 16px;
+            flex-shrink: 0;
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+
+        .social-title {
+            color: var(--primary);
+            margin: 30px 0 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--dark);
+            background-color: var(--light);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        #formMessage {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 600;
+            min-height: 24px;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 50px 0 20px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.65);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-copy {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.875rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ── RESPONSIVE ── */
+        /* ── ACTUALITÉS ── */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .news-card {
+            background: var(--light);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .news-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .news-card-img-placeholder {
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+        }
+
+        .news-card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-date {
+            font-size: .78rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            color: var(--text-muted);
+            font-size: .9rem;
+            line-height: 1.6;
+            flex: 1;
+            /* Troncature après 4 lignes */
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-read-more {
+            display: inline-block;
+            margin-top: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: .875rem;
+            transition: color .2s;
+        }
+        .news-read-more:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: calc(100% + 15px);
+                left: -20px;
+                right: -20px;
+                background-color: var(--light);
+                padding: 20px 30px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                gap: 15px;
+                border-top: 2px solid var(--primary-light);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
+
+            .section { padding: 70px 0; }
+            .section-title { font-size: 2rem; }
+            .section-subtitle { font-size: 1rem; margin-bottom: 40px; }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo { font-size: 1.3rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 0.95rem; }
+            .section { padding: 55px 0; }
+            .section-title { font-size: 1.7rem; }
+            .services-grid { gap: 25px; }
+            .testimonials-grid { gap: 20px; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+        }
+    </style>
+
+    <!-- Données structurées : Établissement local -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Malika Énergéticienne",
+      "description": "Praticienne certifiée en soins énergétiques LaHoChi 13ème Octave et réflexologie faciale Dien Chan à Trédion, Morbihan. Séances en cabinet ou à distance.",
+      "url": "https://malikaenergeticienne.fr",
+      "telephone": "+33683871846",
+      "email": "malikaenergeticienne@hotmail.com",
+      "image": "https://malikaenergeticienne.fr/assets/images/nuages_cosmiques.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "8 La Grande Mare",
+        "addressLocality": "Trédion",
+        "postalCode": "56250",
+        "addressRegion": "Morbihan",
+        "addressCountry": "FR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Trédion"},
+        {"@type": "City", "name": "Elven"},
+        {"@type": "City", "name": "Vannes"},
+        {"@type": "AdministrativeArea", "name": "Morbihan"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Soins énergétiques et bien-être",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "LaHoChi 13ème Octave",
+              "description": "Soin énergétique avancé par imposition des mains pour harmoniser les corps énergétiques, libérer les blocages émotionnels et renforcer l'auto-guérison."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Réflexologie Faciale Dien Chan",
+              "description": "Stimulation des points réflexes du visage pour réduire le stress, soulager les douleurs et activer les processus naturels d'auto-guérison."
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://www.facebook.com/malikaenergeticienne",
+        "https://www.instagram.com/malika_energeticienne"
+      ]
+    }
+    </script>
+
+    <!-- Données structurées : FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que le LaHoChi 13ème Octave ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le LaHoChi de la 13ème Octave est une technique de soins énergétiques avancée, transmise par imposition des mains, qui vise à harmoniser, équilibrer et revitaliser les corps énergétiques de manière holistique. Elle agit sur les blocages énergétiques, émotionnels et mentaux avec des fréquences vibratoires très élevées."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment se déroule une séance de réflexologie Dien Chan ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Une séance de réflexologie faciale Dien Chan dure entre 30 minutes et 1 heure. Vous êtes allongé·e et je stimule les points réflexes de votre visage pour activer les processus naturels d'auto-guérison de votre corps. C'est un moment de détente profonde."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de séances sont nécessaires pour voir des résultats ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cela dépend de vos besoins. Certaines personnes ressentent des effets dès la première séance, tandis que d'autres ont besoin de 3 séances pour un rééquilibrage profond. Nous en discutons lors de notre premier échange."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Les soins énergétiques sont-ils remboursés par la mutuelle ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Certaines mutuelles remboursent partiellement les séances de réflexologie (sous réserve de votre contrat). Les soins énergétiques comme le LaHoChi ne sont généralement pas remboursés, mais je peux vous fournir une facture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je offrir une séance à un proche ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui ! Je propose des bons cadeaux pour offrir une séance de LaHoChi ou de réflexologie Dien Chan. C'est une idée originale pour un anniversaire, une fête, ou simplement pour faire plaisir."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Malika Énergéticienne</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services" onclick="closeNav()">Soins</a></li>
+                <li><a href="#about" onclick="closeNav()">À propos</a></li>
+                <li><a href="#testimonials" onclick="closeNav()">Témoignages</a></li>
+                <li id="nav-actualites" style="display:none"><a href="#actualites" onclick="closeNav()">Actualités</a></li>
+                <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
+                <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Soins Énergétiques & Réflexologie</h1>
+                <p>Libérez vos blocages, retrouvez l'équilibre et l'harmonie avec le <strong>LaHoChi  13ème Octave</strong> et la <strong>réflexologie Dien Chan</strong>. Séances à Trédion et à distance.</p>
+                <a href="#contact" class="btn">Réserver une séance</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Mes Soins</h2>
+            <p class="section-subtitle">Découvrez des approches douces et puissantes pour retrouver votre équilibre physique, émotionnel et spirituel.</p>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>LaHoChi  13ème Octave</h3>
+                    <p>Une technique de soins énergétiques avancée, transmise par imposition des mains, qui vise à harmoniser, équilibrer et revitaliser les corps énergétiques de manière holistique.</p>
+                    <ul>
+                        <li>Paix intérieure et réduction du stress</li>
+                        <li>Libération des traumatismes</li>
+                        <li>Harmonisation des chakras</li>
+                        <li>Soulagement des douleurs physiques et émotionnelles</li>
+                        <li>Alignement avec votre âme</li>
+                        <li>Renforcement des capacités d’auto-guérison</li>
+                    </ul>
+                    <a href="lahochi.html" class="btn">En savoir plus</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Réflexologie Faciale Dien Chan</h3>
+                    <p>Stimulez les points réflexes de la tête pour activer les processus naturels d'auto-guérison du corps et retrouver un bien-être global.</p>
+                    <ul>
+                        <li>Réduire le stress et l’anxiété</li>
+                        <li>Améliorer la circulation sanguine et lymphatique</li>
+                        <li>Stimuler les fonctions organiques (digestion, respiration, système hormonal)</li>
+                        <li>Soulager les douleurs (maux de tête, migraines, douleurs articulaires, dorsales, etc.)</li>
+                        <li>Favoriser la détente musculaire et réduire les tensions</li>
+                    </ul>
+                    <a href="reflexologie-dien-chan.html" class="btn">En savoir plus</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="about" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">À Propos</h2>
+            <div class="about-content">
+                <h3>Malika, Praticienne en Soins Énergétiques</h3>
+                <p>Je vous accompagne avec douceur et bienveillance pour vous aider à retrouver équilibre et harmonie. Certifiée en <strong>LaHoChi  13ème Octave</strong> et <strong>réflexologie Dien Chan</strong>, je mets mon expertise à votre service pour des séances sur mesure.</p>
+                <p>Mon approche allie écoute, intuition et techniques énergétiques pour vous offrir un espace sécurisant et transformateur.</p>
+                <p><strong>Formations :</strong></p>
+                <ul>
+                    <li>Certification LaHoChi  13ème Octave</li>
+                    <li>Certification de réflexologie faciale Dien Chan</li>
+                </ul>
+                <p>Installée à Trédion, je vous accompagne avec des <strong>soins énergétiques LaHoChi  13ème Octave</strong> et de la <strong>réflexologie faciale Dien Chan</strong> pour vous aider à :</p>
+                <ul>
+                    <li>Libérer les <strong>blocages émotionnels</strong>.</li>
+                    <li>Retrouver un <strong>équilibre physique et mental</strong>.</li>
+                    <li>Activer vos <strong>processus naturels d'auto-guérison</strong>.</li>
+                    <li>Vous reconnecter à votre <strong>essence profonde</strong>.</li>
+                </ul>
+                <p>Que vous soyez à <strong>Trédion</strong>, <strong>Elven</strong>, ou <strong>Vannes</strong>, je vous reçois dans un cadre chaleureux et sécurisant. Les séances sont également disponibles <strong>à distance</strong> pour les soins énergétiques.</p>
+                <p><strong>Pour qui ?</strong> Ces soins s'adressent à toute personne en quête de mieux-être, de libération des tensions, ou de soutien dans un processus de transformation (burn-out, deuil, transition de vie, etc.).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2 class="section-title">Témoignages</h2>
+            <p class="section-subtitle">Découvrez ce que mes clients disent de leurs séances.</p>
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Après une séance de LaHoChi  avec Malika, j'ai ressenti un lâcher-prise incroyable. Les blocages que je trainais depuis des années se sont dissous. Je recommande à 100% !"</p>
+                    <div class="testimonial-author">— Amandine, 39 ans</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"La réflexologie avec Malika m'a aidé à réduire mon stress et mes migraines. Un vrai moment de détente et de reconnexion à moi-même."</p>
+                    <div class="testimonial-author">— Laurane, 26 ans</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Les séances combinées LaHoChi  et réflexologie ont été une révélation. J'ai retrouvé une énergie que je ne connaissais plus. Merci pour ce cadeau !"</p>
+                    <div class="testimonial-author">— Marine, 38 ans</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Actualités (masquée si aucun article publié) -->
+    <section id="actualites" class="section" style="display:none">
+        <div class="container">
+            <h2 class="section-title">Actualités</h2>
+            <p class="section-subtitle">Retrouvez ici mes dernières nouvelles, conseils et offres.</p>
+            <div id="news-grid" class="news-grid"></div>
+            <div style="text-align:center; margin-top:40px">
+                <a href="actualites.html" class="btn" id="btn-toutes-actu" style="display:none">
+                    Voir toutes les actualités <i class="fas fa-arrow-right" style="margin-left:8px"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section id="faq" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <p class="section-subtitle">Réponses à vos interrogations sur les soins énergétiques et la réflexologie.</p>
+
+            <div class="faq-container">
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Qu'est-ce que le LaHoChi  13ème Octave ?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Le LaHoChi de la 13ème Octave est une technique de soins énergétiques avancée, transmise par imposition des mains, qui vise à harmoniser, équilibrer et revitaliser les corps énergétiques de manière holistique. Elle est présentée comme une version plus puissante et approfondie du LaHoChi classique, avec des fréquences vibratoires très élevées et une approche plus complète des blocages énergétiques, émotionnels et mentaux.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Comment se déroule une séance de réflexologie ?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Une séance de réflexologie faciale dure entre 30 minutes et 1 heure. Vous êtes allongé·e, et je stimule les points réflexes de votre visage pour activer les processus naturels d'auto-guérison de votre corps. C'est un moment de détente profonde.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Combien de séances sont nécessaires pour voir des résultats ?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cela dépend de vos besoins. Certaines personnes ressentent des effets dès la première séance, tandis que d'autres ont besoin de 3 séances pour un rééquilibrage profond. Nous en discutons lors de notre premier échange.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Les soins énergétiques sont-ils remboursés par la mutuelle ?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Certaines mutuelles remboursent partiellement les séances de réflexologie (sous réserve de votre contrat). Les soins énergétiques comme le LaHoChi  ne sont généralement pas remboursés, mais je peux vous fournir une facture.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Puis-je offrir une séance à un proche ?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui ! Je propose des <strong>bons cadeaux</strong> pour offrir une séance de LaHoChi  ou de réflexologie. C'est une idée originale pour un anniversaire, une fête, ou simplement pour faire plaisir.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Prêt·e à retrouver équilibre et sérénité ? Contactez-moi pour réserver une séance ou poser vos questions.</p>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Coordonnées</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>Trédion</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:0683871846">06 83 87 18 46</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:malikaenergeticienne@hotmail.com">malikaenergeticienne@hotmail.com</a></p>
+                    <h3 class="social-title">Réseaux Sociaux</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/malikaenergeticienne" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/malika_energeticienne" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Réserver une séance</h3>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <input type="text" name="nom" placeholder="Nom prénom *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Votre email *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="telephone" placeholder="Votre téléphone">
+                        </div>
+                        <!-- prestation -->
+                        <div class="form-group">
+                            <select name="prestation" required>
+                                <option value="" disabled selected>Choisissez une prestation</option>
+                                <option value="LaHoChi ">LaHoChi </option>
+                                <option value="Reflexologie">Reflexologie</option>
+                                <option value="Séance combinée">Séance combinée</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-full">Envoyer</button>
+                        <div id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">Malika Énergéticienne</div>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions Légales</a>
+                    <a href="politique-confidentialite.html">Politique de Confidentialité</a>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2025 Malika Énergéticienne. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/form.js"></script>
+    <script>
+        // ── Chargement des actualités ──────────────────────────────────────────
+        (function () {
+            fetch('api/articles.php?limit=3')
+                .then(function(r) { return r.ok ? r.json() : []; })
+                .then(function(articles) {
+                    if (!articles || articles.length < 3) return;
+
+                    var section = document.getElementById('actualites');
+                    var grid    = document.getElementById('news-grid');
+                    if (!section || !grid) return;
+
+                    // Afficher le lien Actualités dans le menu
+                    var navItem = document.getElementById('nav-actualites');
+                    if (navItem) navItem.style.display = '';
+
+                    grid.innerHTML = articles.map(function(a) {
+                        var imgHtml = a.image
+                            ? '<img src="' + escHtml(a.image) + '" alt="' + escHtml(a.titre) + '" class="news-card-img" loading="lazy">'
+                            : '<div class="news-card-img-placeholder"></div>';
+                        return '<article class="news-card">'
+                            + imgHtml
+                            + '<div class="news-card-body">'
+                            + '<div class="news-date">' + formatDateFr(a.date) + '</div>'
+                            + '<h3 class="news-title">' + escHtml(a.titre) + '</h3>'
+                            + '<div class="news-excerpt ql-content">' + safeHtml(a.resume) + '</div>'
+                            + '<a href="article.html?id=' + a.id + '" class="news-read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>'
+                            + '</div></article>';
+                    }).join('');
+
+                    section.style.display = 'block';
+                    var btnToutes = document.getElementById('btn-toutes-actu');
+                    if (btnToutes) btnToutes.style.display = 'inline-block';
+                })
+                .catch(function() {});
+
+            function escHtml(str) {
+                var d = document.createElement('div');
+                d.appendChild(document.createTextNode(String(str || '')));
+                return d.innerHTML;
+            }
+
+            function safeHtml(html) {
+                if (!html) return '';
+                var d = document.createElement('div');
+                d.innerHTML = html;
+                d.querySelectorAll('script,iframe,object,embed,form').forEach(function(el) { el.remove(); });
+                d.querySelectorAll('[onclick],[onerror],[onload]').forEach(function(el) {
+                    ['onclick','onerror','onload'].forEach(function(a) { el.removeAttribute(a); });
+                });
+                return d.innerHTML;
+            }
+
+            function formatDateFr(dateStr) {
+                var mois = ['janvier','février','mars','avril','mai','juin',
+                            'juillet','août','septembre','octobre','novembre','décembre'];
+                var parts = dateStr.split('-');
+                if (parts.length !== 3) return dateStr;
+                var j = parseInt(parts[2], 10);
+                var m = parseInt(parts[1], 10) - 1;
+                var a = parts[0];
+                return j + ' ' + mois[m] + ' ' + a;
+            }
+        })();
+    </script>
+</body>
+</html>

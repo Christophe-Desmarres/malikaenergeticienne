@@ -1,0 +1,43 @@
+# Bloquer l'accès au fichier .env
+<FilesMatch "^\.env(\..*)?$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Limites upload (mod_php / Apache)
+php_value upload_max_filesize 20M
+php_value post_max_size 25M
+php_value max_execution_time 60
+php_value memory_limit 128M
+
+# Activer le moteur de réécriture
+RewriteEngine On
+
+# Désactiver le listing des répertoires
+Options -Indexes
+
+# Bloquer l'accès direct aux fichiers PHP (sauf exceptions)
+RewriteCond %{REQUEST_URI} !^/index\.html$ [NC]
+RewriteCond %{REQUEST_URI} !^.*\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ - [F,L]
+
+# Autoriser l'accès à index.html
+RewriteRule ^index\.html$ - [L]
+
+# Bloquer l'accès direct à send_email.php
+# RewriteCond %{THE_REQUEST} /send_email\.php [NC]
+# RewriteRule ^send_email\.php$ - [F,L]
+
+# Bloquer l'accès direct à form.js (sauf si inclus dans index.html)
+RewriteCond %{THE_REQUEST} /form\.js [NC]
+RewriteRule ^form\.js$ - [F,L]
+
+# Rediriger toutes les autres requêtes vers index.html (pour une SPA)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html [L]
+
+# Autoriser le dossier API
+RewriteRule ^api/ - [L]

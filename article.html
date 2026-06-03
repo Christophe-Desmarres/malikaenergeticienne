@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <!-- Les balises title/description/og sont mises à jour dynamiquement par JS -->
+    <title>Actualité | Malika Énergéticienne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8e7cc3;
+            --primary-light: rgba(142,124,195,.1);
+            --primary-dark: #7a6bc0;
+            --secondary: #f8f9fa;
+            --dark: #2c2c2c;
+            --light: #ffffff;
+            --gray: #e0e0e0;
+            --text-muted: #666;
+            --transition: all .3s ease;
+            --radius: 10px;
+            --shadow: 0 5px 15px rgba(0,0,0,.06);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', sans-serif; line-height: 1.7; color: var(--dark); background: var(--secondary); }
+        a { text-decoration: none; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* ── Header ── */
+        header {
+            background: var(--light); box-shadow: 0 2px 10px rgba(0,0,0,.05);
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 15px 0;
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; position: relative; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .header-nav { display: flex; gap: 24px; align-items: center; }
+        .header-nav a { color: var(--dark); font-size: .9rem; font-weight: 500; transition: color .2s; }
+        .header-nav a:hover { color: var(--primary); }
+        .header-nav .btn-contact {
+            background: var(--primary); color: #fff;
+            padding: 9px 20px; border-radius: 20px; font-weight: 600; font-size: .875rem;
+        }
+        .header-nav .btn-contact:hover { background: var(--primary-dark); color: #fff; }
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            cursor: pointer; background: none; border: none; padding: 5px;
+        }
+        .hamburger span {
+            display: block; width: 24px; height: 2px;
+            background: var(--dark); border-radius: 2px; transition: var(--transition);
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ── Hero image article ── */
+        .article-hero {
+            margin-top: 57px;
+            width: 100%; height: 380px;
+            object-fit: cover; display: block;
+        }
+        .article-hero-placeholder {
+            margin-top: 57px;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+        }
+
+        /* ── Contenu ── */
+        main { padding: 50px 0 80px; }
+
+        .breadcrumb-bar {
+            padding: 12px 0; margin-bottom: 30px;
+            border-bottom: 1px solid var(--gray);
+        }
+        .breadcrumb-bar nav {
+            display: flex; align-items: center; gap: 8px;
+            font-size: .85rem; color: var(--text-muted);
+        }
+        .breadcrumb-bar a { color: var(--primary); transition: color .2s; }
+        .breadcrumb-bar a:hover { text-decoration: underline; }
+        .breadcrumb-bar i { font-size: .6rem; }
+        #breadcrumb-title { max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+        .article-date {
+            font-size: .82rem; font-weight: 600; color: var(--primary);
+            text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px;
+        }
+
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem; line-height: 1.25;
+            color: var(--dark); margin-bottom: 30px;
+        }
+
+        /* Contenu Quill */
+        .article-body { color: #484848; line-height: 1.8; }
+        .article-body p { margin-bottom: 18px; }
+        .article-body strong { color: var(--dark); font-weight: 600; }
+        .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--dark); margin: 32px 0 14px; }
+        .article-body h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); margin: 24px 0 10px; }
+        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 18px; }
+        .article-body li { margin-bottom: 6px; }
+        .article-body a { color: var(--primary); text-decoration: underline; }
+        .article-body a:hover { color: var(--primary-dark); }
+
+        /* ── Partage ── */
+        .share-block {
+            margin: 48px 0 0;
+            padding: 28px 0 0;
+            border-top: 1px solid var(--gray);
+        }
+        .share-label {
+            font-size: .85rem; font-weight: 600; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px;
+        }
+        .share-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 20px; border-radius: 30px;
+            font-size: .875rem; font-weight: 600; cursor: pointer;
+            border: none; transition: var(--transition); font-family: inherit;
+        }
+        .share-btn:hover { transform: translateY(-2px); }
+        .share-facebook { background: #1877F2; color: #fff; }
+        .share-facebook:hover { background: #1565C0; }
+        .share-whatsapp { background: #25D366; color: #fff; }
+        .share-whatsapp:hover { background: #1DA851; }
+        .share-copy { background: var(--secondary); color: var(--dark); border: 1.5px solid var(--gray); }
+        .share-copy:hover { background: var(--gray); }
+        .share-copy.copied { background: #eafaf1; color: #1e8449; border-color: #27ae60; }
+
+        /* ── Navigation bas de page ── */
+        .article-footer-nav {
+            margin-top: 40px; padding-top: 24px;
+            border-top: 1px solid var(--gray);
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+        }
+        .article-footer-nav a {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary); font-weight: 600; font-size: .9rem; transition: color .2s;
+        }
+        .article-footer-nav a:hover { color: var(--primary-dark); }
+        .article-footer-nav .btn-rdv {
+            background: var(--primary); color: #fff;
+            padding: 11px 24px; border-radius: 30px;
+        }
+        .article-footer-nav .btn-rdv:hover { background: var(--primary-dark); color: #fff; }
+
+        /* ── États ── */
+        .state { text-align: center; padding: 80px 20px; color: var(--text-muted); }
+        .state i { font-size: 3rem; color: var(--gray); margin-bottom: 16px; display: block; }
+        .state a { color: var(--primary); font-weight: 600; }
+
+        /* ── Footer ── */
+        footer { background: var(--dark); color: rgba(255,255,255,.65); padding: 30px 0; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .footer-logo { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.3rem; }
+        .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .footer-links a { color: rgba(255,255,255,.5); transition: color .2s; font-size: .875rem; }
+        .footer-links a:hover { color: var(--primary); }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .header-nav {
+                display: none; flex-direction: column;
+                position: absolute; top: calc(100% + 15px);
+                left: -20px; right: -20px;
+                background: var(--light); padding: 20px 30px; gap: 16px;
+                box-shadow: 0 8px 20px rgba(0,0,0,.1);
+                border-top: 2px solid var(--primary-light); z-index: 200;
+            }
+            .header-nav.open { display: flex; }
+            .article-hero { height: 240px; }
+            .article-title { font-size: 1.8rem; }
+            main { padding: 35px 0 60px; }
+        }
+        @media (max-width: 480px) {
+            .logo { font-size: 1.3rem; }
+            .article-title { font-size: 1.5rem; }
+            .share-buttons { gap: 8px; }
+            .share-btn { padding: 9px 14px; font-size: .82rem; }
+        }
+
+        /* Masquer les éléments pendant le chargement */
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="container-wide header-inner">
+        <a href="index.html" class="logo">Malika Énergéticienne</a>
+        <div class="header-nav" id="headerNav">
+            <a href="index.html" onclick="closeNav()">Accueil</a>
+            <a href="actualites.html" onclick="closeNav()">Actualités</a>
+            <a href="lahochi.html" onclick="closeNav()">LaHoChi</a>
+            <a href="reflexologie-dien-chan.html" onclick="closeNav()">Réflexologie</a>
+            <a href="index.html#contact" class="btn-contact" onclick="closeNav()">Prendre rendez-vous</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" onclick="toggleNav()">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- Image hero (affichée si l'article a une image) -->
+<img id="article-hero-img" class="article-hero hidden" src="" alt="">
+<div id="article-hero-bar" class="article-hero-placeholder hidden"></div>
+
+<main>
+    <div class="container">
+
+        <!-- État chargement -->
+        <div id="state-loading" class="state">
+            <i class="fas fa-circle-notch fa-spin"></i>
+            <p>Chargement…</p>
+        </div>
+
+        <!-- État erreur -->
+        <div id="state-error" class="state hidden">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>Actualité introuvable.</p>
+            <a href="actualites.html">← Retour aux actualités</a>
+        </div>
+
+        <!-- Contenu article -->
+        <div id="article-wrap" class="hidden">
+
+            <div class="breadcrumb-bar">
+                <nav>
+                    <a href="index.html">Accueil</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="actualites.html">Actualités</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span id="breadcrumb-title"></span>
+                </nav>
+            </div>
+
+            <div class="article-date" id="article-date"></div>
+            <h1 class="article-title" id="article-title"></h1>
+            <div class="article-body ql-editor" id="article-body" style="padding:0"></div>
+
+            <!-- Partage -->
+            <div class="share-block">
+                <div class="share-label"><i class="fas fa-share-alt"></i> Partager cet article</div>
+                <div class="share-buttons">
+                    <a id="share-facebook" href="#" target="_blank" rel="noopener" class="share-btn share-facebook">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a id="share-whatsapp" href="#" target="_blank" rel="noopener" class="share-btn share-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <button class="share-btn share-copy" id="btn-copy" onclick="copyLink()">
+                        <i class="fas fa-link"></i> Copier le lien
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="article-footer-nav">
+                <a href="actualites.html"><i class="fas fa-arrow-left"></i> Toutes les actualités</a>
+                <a href="index.html#contact" class="btn-rdv">Prendre rendez-vous</a>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container-wide">
+        <div class="footer-inner">
+            <div class="footer-logo">Malika Énergéticienne</div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="actualites.html">Actualités</a>
+                <a href="lahochi.html">LaHoChi 13ème Octave</a>
+                <a href="reflexologie-dien-chan.html">Réflexologie Dien Chan</a>
+                <a href="mentions-legales.html">Mentions Légales</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ── Nav mobile ────────────────────────────────────────────────────────────────
+function toggleNav() {
+    document.getElementById('headerNav').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+}
+function closeNav() {
+    document.getElementById('headerNav').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+}
+
+// ── Chargement de l'article ───────────────────────────────────────────────────
+(function () {
+    var params  = new URLSearchParams(location.search);
+    var id      = params.get('id');
+
+    if (!id) { showError(); return; }
+
+    fetch('api/articles.php?id=' + encodeURIComponent(id))
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(article) {
+            if (!article) { showError(); return; }
+            renderArticle(article);
+        })
+        .catch(showError);
+
+    function showError() {
+        document.getElementById('state-loading').classList.add('hidden');
+        document.getElementById('state-error').classList.remove('hidden');
+    }
+
+    function renderArticle(a) {
+        // Titre et meta
+        document.title = esc(a.titre) + ' | Malika Énergéticienne';
+
+        // Hero image ou barre
+        if (a.image) {
+            var img = document.getElementById('article-hero-img');
+            img.src = a.image;
+            img.alt = a.titre;
+            img.classList.remove('hidden');
+        } else {
+            document.getElementById('article-hero-bar').classList.remove('hidden');
+        }
+
+        // Fil d'Ariane
+        document.getElementById('breadcrumb-title').textContent = a.titre;
+
+        // Date
+        document.getElementById('article-date').textContent = dateFr(a.date);
+
+        // Titre
+        document.getElementById('article-title').textContent = a.titre;
+
+        // Contenu (HTML Quill)
+        var body = document.getElementById('article-body');
+        body.innerHTML = safeHtml(a.resume);
+
+        // Boutons de partage
+        var url   = encodeURIComponent(location.href);
+        var titre = encodeURIComponent(a.titre + ' — Malika Énergéticienne');
+        document.getElementById('share-facebook').href =
+            'https://www.facebook.com/sharer/sharer.php?u=' + url;
+        document.getElementById('share-whatsapp').href =
+            'https://wa.me/?text=' + titre + '%20' + url;
+
+        // Afficher le contenu
+        document.getElementById('state-loading').classList.add('hidden');
+        document.getElementById('article-wrap').classList.remove('hidden');
+    }
+
+    function esc(s) {
+        var d = document.createElement('div');
+        d.appendChild(document.createTextNode(String(s || '')));
+        return d.innerHTML;
+    }
+
+    function safeHtml(html) {
+        if (!html) return '';
+        var d = document.createElement('div');
+        d.innerHTML = html;
+        d.querySelectorAll('script,iframe,object,embed,form').forEach(function(el) { el.remove(); });
+        d.querySelectorAll('[onclick],[onerror],[onload]').forEach(function(el) {
+            ['onclick','onerror','onload'].forEach(function(attr) { el.removeAttribute(attr); });
+        });
+        return d.innerHTML;
+    }
+
+    function dateFr(str) {
+        var m = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+        var p = str ? str.split('-') : [];
+        return p.length === 3
+            ? parseInt(p[2], 10) + ' ' + m[parseInt(p[1], 10) - 1] + ' ' + p[0]
+            : str;
+    }
+})();
+
+// ── Copier le lien ─────────────────────────────────────────────────────────────
+function copyLink() {
+    var btn = document.getElementById('btn-copy');
+    navigator.clipboard.writeText(location.href).then(function() {
+        btn.innerHTML = '<i class="fas fa-check"></i> Lien copié !';
+        btn.classList.add('copied');
+        setTimeout(function() {
+            btn.innerHTML = '<i class="fas fa-link"></i> Copier le lien';
+            btn.classList.remove('copied');
+        }, 2500);
+    }).catch(function() {
+        // Fallback pour les navigateurs sans clipboard API
+        var ta = document.createElement('textarea');
+        ta.value = location.href;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.innerHTML = '<i class="fas fa-check"></i> Lien copié !';
+        btn.classList.add('copied');
+        setTimeout(function() {
+            btn.innerHTML = '<i class="fas fa-link"></i> Copier le lien';
+            btn.classList.remove('copied');
+        }, 2500);
+    });
+}
+</script>
+
+</body>
+</html>
