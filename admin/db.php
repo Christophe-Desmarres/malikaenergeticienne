@@ -19,12 +19,13 @@
 
 // ─── Constantes avec valeurs par défaut si .env absent ───────────────────────
 defined('APP_ENV')    || define('APP_ENV',    'production');
-defined('DB_HOST')    || define('DB_HOST',    '127.0.0.1');
-defined('DB_NAME')    || define('DB_NAME',    'malika_db');
-defined('DB_USER')    || define('DB_USER',    'root');
-defined('DB_PASS')    || define('DB_PASS',    '');
-defined('DB_CHARSET') || define('DB_CHARSET', 'utf8mb4');
-defined('DB_PREFIX')  || define('DB_PREFIX',  'malikaenergeticienne_');
+// defined('APP_ENV')    || define('APP_ENV',    'development');
+// defined('DB_HOST')    || define('DB_HOST',    'localhost');
+// defined('DB_NAME')    || define('DB_NAME',    'malikavchrisdmar');
+// defined('DB_USER')    || define('DB_USER',    'root');
+// defined('DB_PASS')    || define('DB_PASS',    '');
+// defined('DB_CHARSET') || define('DB_CHARSET', 'utf8mb4');
+// defined('DB_PREFIX')  || define('DB_PREFIX',  'malikaenergeticienne_');
 
 // ─── Affichage des erreurs PHP selon l'environnement ─────────────────────────
 if (APP_ENV === 'development') {
@@ -64,6 +65,7 @@ function pdo(): PDO {
                     PDO::ATTR_EMULATE_PREPARES   => false,
                 ]
             );
+            
         } catch (PDOException $e) {
             http_response_code(500);
             die(
@@ -81,7 +83,8 @@ function pdo(): PDO {
 /**
  * Vérifie les identifiants d'un admin contre la base.
  */
-function auth_verify(string $username, string $password): bool {
+function auth_verify(string $username, string $password): bool 
+{
     try {
         $stmt = pdo()->prepare(
             'SELECT password_hash FROM `' . tbl('admins') . '` WHERE username = ? LIMIT 1'
@@ -89,7 +92,7 @@ function auth_verify(string $username, string $password): bool {
         $stmt->execute([$username]);
         $row = $stmt->fetch();
         return $row && password_verify($password, $row['password_hash']);
-    } catch (Exception) {
+    } catch (Exception $e) {
         return false;
     }
 }

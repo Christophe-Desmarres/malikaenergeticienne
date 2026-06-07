@@ -1,0 +1,14 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# api/.htaccess — Protections de l'API
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── Pas de listing ────────────────────────────────────────────────────────────
+Options -Indexes
+
+# ── send_email.php : POST uniquement ─────────────────────────────────────────
+<Files "send_email.php">
+    <LimitExcept POST>
+        Order allow,deny
+        Deny from all
+    </LimitExcept>
+</Files>

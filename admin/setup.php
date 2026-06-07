@@ -20,28 +20,24 @@
 })();
 
 // Valeurs par défaut si .env absent
-defined('DB_HOST')    || define('DB_HOST',    '127.0.0.1');
-defined('DB_NAME')    || define('DB_NAME',    'malika_db');
-defined('DB_USER')    || define('DB_USER',    'root');
-defined('DB_PASS')    || define('DB_PASS',    '');
-defined('DB_CHARSET') || define('DB_CHARSET', 'utf8mb4');
-defined('DB_PREFIX')  || define('DB_PREFIX',  'malikaenergeticienne_');
+// defined('DB_HOST')    || define('DB_HOST',    '127.0.0.1');
+// defined('DB_NAME')    || define('DB_NAME',    'malika_db');
+// defined('DB_USER')    || define('DB_USER',    'root');
+// defined('DB_PASS')    || define('DB_PASS',    '');
+// defined('DB_CHARSET') || define('DB_CHARSET', 'utf8mb4');
+// defined('DB_PREFIX')  || define('DB_PREFIX',  'malikaenergeticienne_');
 
 $step    = 'form';
 $success = '';
 $error   = '';
 
-// Tentative de connexion
+// Tentative de connexion — la base doit exister (créée dans phpMyAdmin ou par l'hébergeur)
 try {
     $pdo = new PDO(
-        'mysql:host=' . DB_HOST . ';charset=' . DB_CHARSET,
+        'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=' . DB_CHARSET,
         DB_USER, DB_PASS,
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_EMULATE_PREPARES => false]
     );
-
-    // Créer la base si elle n'existe pas
-    $pdo->exec("CREATE DATABASE IF NOT EXISTS `" . DB_NAME . "` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
-    $pdo->exec("USE `" . DB_NAME . "`");
 
     // Créer la table avec préfixe
     $tbl = DB_PREFIX . 'admins';

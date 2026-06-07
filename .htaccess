@@ -1,43 +1,64 @@
-# Bloquer l'accès au fichier .env
-<FilesMatch "^\.env(\..*)?$">
+# ══════════════════════════════════════════════════════════════════════════════
+# Malika Énergéticienne — Configuration Apache
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── Désactiver le listing des répertoires ─────────────────────────────────────
+Options -Indexes
+
+# ── Fichiers sensibles : accès interdit ───────────────────────────────────────
+<FilesMatch "(^\.env(\.example)?$|^\.gitignore$|^\.user\.ini$|^\.htaccess$)">
     Order allow,deny
     Deny from all
 </FilesMatch>
 
-# Limites upload (mod_php / Apache)
-php_value upload_max_filesize 20M
-php_value post_max_size 25M
-php_value max_execution_time 60
-php_value memory_limit 128M
+# ── Dossier data (JSON articles) : accès interdit ─────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^data(/.*)?$ - [F,L]
+</IfModule>
 
-# Activer le moteur de réécriture
-RewriteEngine On
+# ── Limites upload PHP (mod_php / Apache) ─────────────────────────────────────
+# php_value upload_max_filesize 20M
+# php_value post_max_size       25M
+# php_value max_execution_time  60
+# php_value memory_limit        128M
 
-# Désactiver le listing des répertoires
-Options -Indexes
+# ── En-têtes de sécurité ──────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+    # Empêche le MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # Empêche l'inclusion dans une iframe externe
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # Protection XSS (anciens navigateurs)
+    Header always set X-XSS-Protection "1; mode=block"
+    # Politique de référent
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Supprimer la signature du serveur
+    Header always unset X-Powered-By
+    Header always unset Server
+</IfModule>
 
-# Bloquer l'accès direct aux fichiers PHP (sauf exceptions)
-RewriteCond %{REQUEST_URI} !^/index\.html$ [NC]
-RewriteCond %{REQUEST_URI} !^.*\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ [NC]
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ - [F,L]
+# ── Cache navigateur pour les ressources statiques ────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg                "access plus 3 months"
+    ExpiresByType image/png                 "access plus 3 months"
+    ExpiresByType image/webp                "access plus 3 months"
+    ExpiresByType image/gif                 "access plus 3 months"
+    ExpiresByType image/svg+xml             "access plus 1 month"
+    ExpiresByType text/css                  "access plus 1 week"
+    ExpiresByType text/javascript           "access plus 1 week"
+    ExpiresByType application/javascript    "access plus 1 week"
+    ExpiresByType application/json          "access plus 0 seconds"
+    ExpiresByType text/html                 "access plus 0 seconds"
+</IfModule>
 
-# Autoriser l'accès à index.html
-RewriteRule ^index\.html$ - [L]
+# ── Compression gzip ──────────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
 
-# Bloquer l'accès direct à send_email.php
-# RewriteCond %{THE_REQUEST} /send_email\.php [NC]
-# RewriteRule ^send_email\.php$ - [F,L]
-
-# Bloquer l'accès direct à form.js (sauf si inclus dans index.html)
-RewriteCond %{THE_REQUEST} /form\.js [NC]
-RewriteRule ^form\.js$ - [F,L]
-
-# Rediriger toutes les autres requêtes vers index.html (pour une SPA)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /index.html [L]
-
-# Autoriser le dossier API
-RewriteRule ^api/ - [L]
+# ── Charset par défaut ────────────────────────────────────────────────────────
+AddDefaultCharset UTF-8
